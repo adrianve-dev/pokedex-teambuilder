@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home() {  
   return (
     <div>
       <Head>
@@ -12,14 +12,14 @@ export default function Home() {
       </Head>
       Pokedex Team Builder
       <div>
-        <Link href={'./pokedex'}>
+        <Link href={'/pokedex'}>
           <a>
             Pokedex
           </a>
         </Link>
       </div>
       <div>
-        <Link href={'./team'}>
+        <Link href={'/team'}>
           <a>
             My Team
           </a>
