@@ -1,7 +1,16 @@
+import LgSquareAvatar from '../components/LgSquareAvatar'
+
 const Team = () => {
-    <div>
-        My Team
-    </div>
+    return (
+        <div>
+            <div>
+                My Team
+            </div>
+            <div>
+                Pokemon
+            </div>
+        </div>
+    )
 }
 
 export default Team

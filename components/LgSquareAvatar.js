@@ -1,24 +1,26 @@
-import { useQuery } from "@apollo/client"
-import { GET_SPRITE_BY_ID } from "../utils/queries"
 import Image from "next/image"
+import Link from "next/link"
 
 const LgSquareAvatar = (props) => {
-    const { pokemonId } = props
-    const query = useQuery(GET_SPRITE_BY_ID, {variables: { pokemonId: pokemonId }})
+    const { pokemon } = props
 
     return (
         <div>
-            {query.data
+            {pokemon.sprites && pokemon.name
                 ?
                     <Image
-                        src={query.data.pokemon.sprites.front_default}
+                        src={pokemon.sprites.front_default}
                         height={250}
                         width={250}
-                        alt={'pokemon avatar'}
+                        alt={pokemon.name}
                     />
                 :
                     <div style={{border: '0.75rem #eee dashed', borderRadius: '2rem', minHeight: 250, textAlign:'center'}}>
-                        Add Pokemon
+                        <Link href='/pokedex'> 
+                        <a>
+                            Add Pokemon
+                        </a>
+                        </Link>
                     </div>
             }
         </div>
