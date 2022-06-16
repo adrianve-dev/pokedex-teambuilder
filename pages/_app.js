@@ -17,9 +17,7 @@ function PDTB({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={client}>
-      {/* <AppWithData> */}
         <Component {...pageProps} />
-      {/* </AppWithData> */}
     </ApolloProvider>
   )
 }
