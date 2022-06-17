@@ -1,5 +1,7 @@
 import { ApolloProvider, useQuery } from "@apollo/client";
 import { GET_ALL_POKEMON } from '../utils/queries'
+import { store } from '../redux/store'
+import { Provider } from 'react-redux'
 import client from '../utils/apollo-client'
 import '../styles/globals.css'
 
@@ -16,9 +18,11 @@ function PDTB({ Component, pageProps }) {
   }
 
   return (
-    <ApolloProvider client={client}>
-        <Component {...pageProps} />
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+          <Component {...pageProps} />
+      </ApolloProvider>
+    </Provider>
   )
 }
 
